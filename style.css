@@ -1,6 +1,15 @@
-.wrapper{ max-width: 900px; width: 90%; margin: 0 auto; text-align: justify; }
-.filter{ width: 90%; margin: 0 auto; }
-.book{ width: 100%; display: flex; justify-content: space-around; }
-.book__cover{ margin: 10px; }
-.book__cover img{ margin: 10px; max-width: 350px; }
-.book__text{ width: 80%; }
+.wrapper{ width: 90%; margin: 0 auto; }
+.filter{ width: 100%; margin: 0 auto; }
+.book{ width: 100%; margin-top: 40px; padding-bottom: 10px; border-bottom: 1px solid black; display: flex; justify-content: space-around; align-items: center; flex-direction: column; }
+.book__cover{ margin: 10px;}
+.book__cover img{ margin: 0 auto; }
+.book__description{ text-align: justify; }
+
+
+@media all and (min-width: 768px){
+    .wrapper{ max-width: 900px; }
+    .book{ width: 100%; display: flex; justify-content: space-around; flex-direction: row; align-items: flex-start}
+    .book__cover{ margin: 10px; width: 20%;}
+    .book__cover img{ margin: 10px; max-width: 128px; }
+    .book__description{ width: 100%}
+}
