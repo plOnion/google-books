@@ -10,6 +10,10 @@ $(function () {
 
     const showBooks = (books) => {
         books.items.forEach(book => {
+
+            if (book.volumeInfo.description == undefined) {
+                book.volumeInfo.description = "Brak opisu" }
+                
             main.append(`<div class='book'>
                     <div class="book__cover"><img src= ${book.volumeInfo.imageLinks.thumbnail} /></div>
                     <div style="width: 80%">
