@@ -1,0 +1,6 @@
+.wrapper{ max-width: 900px; width: 90%; margin: 0 auto; text-align: justify; }
+.filter{ width: 90%; margin: 0 auto; }
+.book{ width: 100%; display: flex; justify-content: space-around; }
+.book__cover{ margin: 10px; }
+.book__cover img{ margin: 10px; max-width: 350px; }
+.book__text{ width: 80%; }
