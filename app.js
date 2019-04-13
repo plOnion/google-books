@@ -2,6 +2,7 @@ $(function () {
 
     const main = $(".js-content");
     let index = 0;
+    let title = "";
     const input = document.querySelector(".filter__input");
 
     // items[""0""].volumeInfo.title
@@ -25,7 +26,15 @@ $(function () {
                     </div>`);
         });
     };
-    
+
+const showMore = () =>{
+    window.onscroll = function(ev) {
+        if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight){
+        index = index + 10;
+        let url = "https://www.googleapis.com/books/v1/volumes?q="+title+"&startIndex="+index;
+        show(url);
+    }
+}}
     const show = (url)=>{
         $.ajax({
             method: "GET",
@@ -38,9 +47,10 @@ $(function () {
     };
 
     input.addEventListener("change", ()=>{
-        let title = input.value;
+        title = input.value;
         let url = "https://www.googleapis.com/books/v1/volumes?q="+title+"&startIndex="+index;
         show(url);
+        showMore();
     })
 
 })
